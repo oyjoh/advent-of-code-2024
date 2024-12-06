@@ -1,5 +1,7 @@
 package util
 
+import "fmt"
+
 func PadRuneMatrix(matrix [][]rune, padSize int) [][]rune {
 
 	paddedMatrix := make([][]rune, len(matrix)+padSize*2)
@@ -14,4 +16,18 @@ func PadRuneMatrix(matrix [][]rune, padSize int) [][]rune {
 	}
 
 	return paddedMatrix
+}
+
+func PrintRuneMatrix(matrix [][]rune) {
+	for _, row := range matrix {
+		fmt.Print("[ ")
+		for _, val := range row {
+			if val == '\x00' {
+				fmt.Print("■ ")
+			} else {
+				fmt.Print(string(val) + " ")
+			}
+		}
+		fmt.Print("]\n")
+	}
 }
