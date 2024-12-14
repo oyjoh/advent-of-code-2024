@@ -31,3 +31,18 @@ func PrintRuneMatrix(matrix [][]rune) {
 		fmt.Print("]\n")
 	}
 }
+
+func PrintIntMatrix(matrix [][]int) {
+	for _, row := range matrix {
+		fmt.Print("[ ")
+		for _, val := range row {
+			if val == 0 {
+				fmt.Printf("  ")
+			} else {
+
+				fmt.Printf("%d ", val)
+			}
+		}
+		fmt.Print("]\n")
+	}
+}
