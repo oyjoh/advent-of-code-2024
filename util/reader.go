@@ -25,6 +25,21 @@ func RuneMatrix(path string) [][]rune {
 	return matrix
 }
 
+func ReadRuneMatrixFromLines(lines []string) [][]rune {
+	var matrix [][]rune
+
+	for _, line := range lines {
+
+		var row []rune
+		for r := 0; r < len(line); r++ {
+			row = append(row, rune(line[r]))
+		}
+		matrix = append(matrix, row)
+
+	}
+	return matrix
+}
+
 func ReadIntMatrix(path string) [][]int {
 	dat, _ := os.ReadFile(path)
 
